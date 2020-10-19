@@ -3,65 +3,30 @@
 
 int main() {
 
-  Engenheiro eng1;
-  eng1.SetName("Joao Snow");
-  eng1.Set_SalarioHora(35);
-  eng1.Set_Projetos(3); 
-  std::cout << "Nome: " << eng1.GetName() << std::endl;
-  std::cout << "Salario Mes: " << eng1.pagamentoMes(9.5) << std::endl;
-  std::cout << "Projetos: " << eng1.Get_Projetos() << std::endl;
-  std::cout << std::endl;
-  //eng1.Print_Dados(9.5);
+  Engenheiro* eng1 = new Engenheiro("Joao Snow", 35, 3);
+  eng1->Print_Dados(9.5);
   
-  Engenheiro eng2;
-  eng2.SetName("Daniela Targaryen");
-  eng2.Set_SalarioHora(30);
-  eng2.Set_Projetos(1); 
-  std::cout << "Nome: " << eng2.GetName() << std::endl;
-  std::cout << "Salario Mes: " << eng2.pagamentoMes(8) << std::endl;
-  std::cout << "Projetos: " << eng2.Get_Projetos() << std::endl;  
-  std::cout << std::endl;
-  //eng2.Print_Dados(8);
+  Engenheiro* eng2 = new Engenheiro("Daniela Targaryen", 30, 1);
+  eng2->Print_Dados(8);
   
-  Engenheiro eng3;
-  eng3.SetName("Bruno Stark");
-  eng3.Set_SalarioHora(30);
-  eng3.Set_Projetos(2); 
-  std::cout << "Nome: " << eng3.GetName() << std::endl;
-  std::cout << "Salario Mes: " << eng3.pagamentoMes(8) << std::endl;
-  std::cout << "Projetos: " << eng3.Get_Projetos() << std::endl;  
-  std::cout << std::endl;
-  //eng3.Print_Dados(8);
+  Engenheiro* eng3 = new Engenheiro("Bruno Stark", 30, 2);
+  eng3->Print_Dados(8);
   
   
-  Vendedor vend1;
-  vend1.SetName("Tonho Lannister");
-  vend1.Set_SalarioHora(20);
-  vend1.Set_quotaMensalVendas(5000); 
-  std::cout << "Nome: " << vend1.GetName() << std::endl;
-  std::cout << "Salario Mes: " << vend1.pagamentoMes(6) << std::endl;  
-  std::cout << "Quota vendas: " << vend1.quotaTotalAnual() << std::endl;
-  std::cout << std::endl;
-  //vend1.Print_Dados(6);
+  Vendedor* vend1 = new Vendedor("Tonho Lannister", 20, 5000);
+  vend1->Print_Dados(6);
   
-  Vendedor vend2;
-  vend2.SetName("Jose Mormont");
-  vend2.Set_SalarioHora(25);
-  vend2.Set_quotaMensalVendas(3000);
-  std::cout << "Nome: " << vend2.GetName() << std::endl;
-  std::cout << "Salario Mes: " << vend2.pagamentoMes(8) << std::endl;  
-  std::cout << "Quota vendas: " << vend2.quotaTotalAnual() << std::endl; 
-  std::cout << std::endl;  
-  //vend2.Print_Dados(8);
+  Vendedor* vend2 = new Vendedor("Jose Mormont", 25, 3000);
+  vend2->Print_Dados(8);
 	
-  Vendedor vend3;
-  vend3.SetName("Sonia Stark");
-  vend3.Set_SalarioHora(30);
-  vend3.Set_quotaMensalVendas(4000);
-  std::cout << "Nome: " << vend3.GetName() << std::endl;
-  std::cout << "Salario Mes: " << vend3.pagamentoMes(8) << std::endl;  
-  std::cout << "Quota vendas: " << vend3.quotaTotalAnual() << std::endl;
-  //vend3.Print_Dados(8);
+  Vendedor* vend3 = new Vendedor("Sonia Stark", 30, 4000);
+  vend3->Print_Dados(8);
 
+  delete eng1;
+  delete eng2;
+  delete eng3;
+  delete vend1;
+  delete vend2;
+  delete vend3;
   return 0;
 }

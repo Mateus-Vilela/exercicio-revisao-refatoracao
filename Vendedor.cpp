@@ -15,9 +15,9 @@ double Vendedor::quotaTotalAnual() const {
 	return quotaMensalVendas * MESES_ANO;
 }
 
-/*void Vendedor::Print_Dados(double horasTrabalhadas) {
+void Vendedor::Print_Dados(double horasTrabalhadas) const {
   std::cout << "Nome: " << this->GetName() << std::endl;
   std::cout << "Salario Mes: " << this->pagamentoMes(horasTrabalhadas) << std::endl;  
   std::cout << "Quota vendas: " << this->quotaTotalAnual() << std::endl;
   std::cout << std::endl;
-}*/
+}

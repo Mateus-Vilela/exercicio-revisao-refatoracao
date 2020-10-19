@@ -2,7 +2,8 @@
 #include <string>
 #include "Empregado.hpp"
 
-const int HORAS_EXTRA_MINIMA = 8;
+const int MINIMO_HORAS = 8;
+const double TAXA_HORA_EXTRA = 0.5;
 
 void Empregado::SetName(std::string name) {
   nome = name;
@@ -20,14 +21,14 @@ double Empregado::Get_SalarioHora() const {
   return salarioHora;
 }
 
-double Empregado::pagamentoMes(double horasTrabalhadas) {
+double Empregado::pagamentoMes(double horasTrabalhadas) const {
 
-  double t = horasTrabalhadas;
+  double taxa_total = horasTrabalhadas;
 
   //Cálculo de hora extra (+50% se horasTrabalhadas > 8)
-  if (horasTrabalhadas > HORAS_EXTRA_MINIMA) {
-    double x = horasTrabalhadas - HORAS_EXTRA_MINIMA;
-    t += x / 2;
+  if (horasTrabalhadas > MINIMO_HORAS) {
+    double horas_extras = horasTrabalhadas - MINIMO_HORAS;
+    taxa_total += horas_extras * TAXA_HORA_EXTRA;
   }
-  return t * salarioHora;
+  return taxa_total * salarioHora;
 }
